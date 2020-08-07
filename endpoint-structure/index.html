@@ -527,15 +527,15 @@ when the environment variable is not specified. Then, just configure your "list 
 environment variable.</p>
 <h3 id="serverless-example">Serverless Example</h3>
 <div class="codehilite"><pre><span></span><code><span class="c1"># Unique listing of all values of the `status` key that the user is permitted to see</span>
-<span class="n">list</span><span class="o">-</span><span class="n">statuses</span><span class="p">:</span>
-  <span class="n">handler</span><span class="p">:</span> <span class="n">endpoints</span><span class="p">.</span><span class="n">list</span><span class="p">.</span><span class="n">main</span>
-  <span class="n">events</span><span class="p">:</span>
-    <span class="o">-</span> <span class="n">http</span><span class="p">:</span>
-        <span class="n">path</span><span class="p">:</span> <span class="n">statuses</span>
-        <span class="n">method</span><span class="p">:</span> <span class="n">get</span>
-        <span class="n">private</span><span class="p">:</span> <span class="no">true</span>
-  <span class="n">environment</span><span class="p">:</span>
-    <span class="n">UniqueKey</span><span class="p">:</span> <span class="n">status</span>
+<span class="nt">list-statuses</span><span class="p">:</span>
+  <span class="nt">handler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">endpoints.list.main</span>
+  <span class="nt">events</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">http</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">statuses</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">get</span>
+        <span class="nt">private</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="nt">environment</span><span class="p">:</span>
+    <span class="nt">UniqueKey</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">status</span>
 </code></pre></div>
 
 
