@@ -435,15 +435,15 @@ the method as <code>path_params</code>, it will dynamically modify the path para
 
 
 <p>Or when using serverless:</p>
-<div class="codehilite"><pre><span></span><code><span class="c">events:</span>
-<span class="c">  - http:</span>
-<span class="c">      path: endpoint</span>
-<span class="c">      method: get</span>
-<span class="c">      private: true</span>
-<span class="c">  - http:</span>
-<span class="c">      path: endpoint/{search_key}/{search_value}</span>
-<span class="c">      method: get</span>
-<span class="c">      private: true</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">events</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">http</span><span class="p">:</span>
+      <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">endpoint</span>
+      <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">get</span>
+      <span class="nt">private</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="nt">http</span><span class="p">:</span>
+      <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">endpoint/{search_key}/{search_value}</span>
+      <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">get</span>
+      <span class="nt">private</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 
 
