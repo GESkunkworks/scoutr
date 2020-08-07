@@ -754,17 +754,19 @@ each access control type to assist with passing the correct request format into 
 and passes the OIDC claims as headers.</p>
 <p>The simplest method to setup the API is to use <a href="https://www.flaskapi.org/">Flask API</a>. Helper methods have been
 provided to make the setup as simple as possible. The <a href="https://github.com/GESkunkworks/scoutr/blob/master/scoutr/flask/routes.py#L11"><code>init_flask</code></a> method
-automatically generates the belows endpoints:
-- GET <code>/user/</code> - Returns information about the authenticated user
-- POST <code>/user/has-permission/</code> - Determine if user has permission to access an endpoint. The body of this request should
-    contain <code>method</code> and <code>path</code> keys as JSON.
-- GET <code>/&lt;primary_list_endpoint&gt;/</code> - Primary endpoint used to list data. The value of <code>primary_list_endpoint</code> is determined
-    by an argument passed to <code>init_flask()</code>
-- GET <code>/audit/</code> - List and search all audit logs
-- GET <code>/audit/&lt;item&gt;/</code> - List audit logs for a particular resource
-- GET <code>/history/&lt;item&gt;/</code> - Show history for a particular resource
-- POST <code>/search/&lt;search_key&gt;/</code> - Search endpoint that allows searching by any key for one or more values. The body of
-    this request should be a JSON list of values.</p>
+automatically generates the belows endpoints:</p>
+<ul>
+<li>GET <code>/user/</code> - Returns information about the authenticated user</li>
+<li>POST <code>/user/has-permission/</code> - Determine if user has permission to access an endpoint. The body of this request should
+    contain <code>method</code> and <code>path</code> keys as JSON.</li>
+<li>GET <code>/&lt;primary_list_endpoint&gt;/</code> - Primary endpoint used to list data. The value of <code>primary_list_endpoint</code> is determined
+    by an argument passed to <code>init_flask()</code></li>
+<li>GET <code>/audit/</code> - List and search all audit logs</li>
+<li>GET <code>/audit/&lt;item&gt;/</code> - List audit logs for a particular resource</li>
+<li>GET <code>/history/&lt;item&gt;/</code> - Show history for a particular resource</li>
+<li>POST <code>/search/&lt;search_key&gt;/</code> - Search endpoint that allows searching by any key for one or more values. The body of
+    this request should be a JSON list of values.</li>
+</ul>
 <h4 id="example_1">Example</h4>
 <p>Refer to the <a href="https://github.com/GESkunkworks/scoutr/blob/master/example/flask/main.py">example flask application</a></p>
 <h3 id="concepts">Concepts</h3>
@@ -806,13 +808,15 @@ perform the call. For convenience, regular expressions can be used within the <c
 
 
 <h3 id="groups">Groups</h3>
-<p>A group object be made up of:
-- <code>group_id</code> - Identifier for the group
-- <code>permitted_endpoints</code> - Optional list of permitted endpoints
-- <code>filter_fields</code> - Optional list of field filters
-- <code>exclude_fields</code> - Optional list of field exclusions
-- <code>update_fields_permitted</code> - Optional list of the only fields that can be updated
-- <code>update_fields_restricted</code> - Optional list of fields to restrict updates for</p>
+<p>A group object be made up of:</p>
+<ul>
+<li><code>group_id</code> - Identifier for the group</li>
+<li><code>permitted_endpoints</code> - Optional list of permitted endpoints</li>
+<li><code>filter_fields</code> - Optional list of field filters</li>
+<li><code>exclude_fields</code> - Optional list of field exclusions</li>
+<li><code>update_fields_permitted</code> - Optional list of the only fields that can be updated</li>
+<li><code>update_fields_restricted</code> - Optional list of fields to restrict updates for</li>
+</ul>
 <p>The name of the group table must be passed in to the constructor.</p>
 <h4 id="example_2">Example</h4>
 <div class="codehilite"><pre><span></span><code><span class="p">{</span>
@@ -859,10 +863,12 @@ perform the call. For convenience, regular expressions can be used within the <c
 
 <h3 id="auth-identifier">Auth Identifier</h3>
 <h4 id="types">Types</h4>
-<p>There are three types of accepted authentication identifiers:
-- USERNAME
-- OIDC_GROUP
-- API_KEY</p>
+<p>There are three types of accepted authentication identifiers:</p>
+<ul>
+<li>USERNAME</li>
+<li>OIDC_GROUP</li>
+<li>API_KEY</li>
+</ul>
 <p>Though not required, it is recommended for each object type to have a <code>type</code> key that corresponds to its
 authentication type (OIDC_GROUP, USERNAME, or API_KEY).</p>
 <p>The field requirements for each object type are outlined in the following sections</p>
@@ -904,9 +910,11 @@ permissions that a group defines (<code>filter_fields</code>, <code>exclude_fiel
 <code>update_fields_restricted</code>, <code>permitted_endpoints</code>) can be expressed at the user level. These permissions will be
 combined together with the permissions outlined in the groups the user is a member of. Permissions defined at the user
 level <strong>DO NOT</strong> override those specified at the group level - they are combined.</p>
-<p>If a user is a member of multiple OIDC groups, the permissions are combined such that
-- Any <code>filter_fields</code> definied in a child <code>groups</code> block are combined together with an <code>AND</code> expression
-- All of the combined permissions in each OIDC group the user is a member of are combined together with an <code>OR</code> expression</p>
+<p>If a user is a member of multiple OIDC groups, the permissions are combined such that</p>
+<ul>
+<li>Any <code>filter_fields</code> definied in a child <code>groups</code> block are combined together with an <code>AND</code> expression</li>
+<li>All of the combined permissions in each OIDC group the user is a member of are combined together with an <code>OR</code> expression</li>
+</ul>
 <p>The name of the user table must be passed in to the constructor.</p>
 <h3 id="audit-logs">Audit Logs</h3>
 <p>For every authorized, successful call to the API, an entry will be logged in the audit log table. Each record will
@@ -939,11 +947,13 @@ follow the below format:</p>
 </code></pre></div>
 
 
-<p>The following fields may not be included or may not have values for all types of actions:
-- body
-- query_params
-- path_params
-- resource</p>
+<p>The following fields may not be included or may not have values for all types of actions:</p>
+<ul>
+<li>body</li>
+<li>query_params</li>
+<li>path_params</li>
+<li>resource</li>
+</ul>
                 
               
               
