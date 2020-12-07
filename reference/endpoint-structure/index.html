@@ -1,0 +1,1599 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <meta name="author" content="GE Skunkworks">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
+    
+    
+      
+        <title>Endpoint structure - Scoutr</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-69269008-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#list-all-records" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../.." title="Scoutr" class="md-header-nav__button md-logo" aria-label="Scoutr">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Scoutr
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Endpoint structure
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/GESkunkworks/scoutr/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../../getting-started/installation/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+        
+      
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../../example/" class="md-tabs__link">
+        Example
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Scoutr" class="md-nav__button md-logo" aria-label="Scoutr">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Scoutr
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/GESkunkworks/scoutr/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../.." class="md-nav__link">
+      About
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../providers/" class="md-nav__link">
+      Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/installation/" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../getting-started/configuration/" class="md-nav__link">
+      Configuration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <label class="md-nav__link" for="nav-3">
+      Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Endpoint structure
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" class="md-nav__link md-nav__link--active">
+      Endpoint structure
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-records" class="md-nav__link">
+    List all records
+  </a>
+  
+    <nav class="md-nav" aria-label="List all records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serverless-example" class="md-nav__link">
+    Serverless Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-unique-values-for-a-key" class="md-nav__link">
+    List all unique values for a key
+  </a>
+  
+    <nav class="md-nav" aria-label="List all unique values for a key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_1" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-multiple-values-for-a-single-search-key" class="md-nav__link">
+    Search multiple values for a single search key
+  </a>
+  
+    <nav class="md-nav" aria-label="Search multiple values for a single search key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_2" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-single-item-by-key" class="md-nav__link">
+    Get single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Get single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_3" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-item" class="md-nav__link">
+    Create item
+  </a>
+  
+    <nav class="md-nav" aria-label="Create item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_4" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-single-item-by-key" class="md-nav__link">
+    Update single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Update single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_5" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-single-item-by-key" class="md-nav__link">
+    Delete single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_6" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-audit-logs" class="md-nav__link">
+    List all audit logs
+  </a>
+  
+    <nav class="md-nav" aria-label="List all audit logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_7" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-item-history" class="md-nav__link">
+    View item history
+  </a>
+  
+    <nav class="md-nav" aria-label="View item history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_8" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../access-control/" class="md-nav__link">
+      Access control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication/" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../filtering/" class="md-nav__link">
+      Filtering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../error-tracking/" class="md-nav__link">
+      Error tracking
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      Example
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Example" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Example
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../example/" class="md-nav__link">
+      Example
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-records" class="md-nav__link">
+    List all records
+  </a>
+  
+    <nav class="md-nav" aria-label="List all records">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#serverless-example" class="md-nav__link">
+    Serverless Example
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-unique-values-for-a-key" class="md-nav__link">
+    List all unique values for a key
+  </a>
+  
+    <nav class="md-nav" aria-label="List all unique values for a key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_1" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search-multiple-values-for-a-single-search-key" class="md-nav__link">
+    Search multiple values for a single search key
+  </a>
+  
+    <nav class="md-nav" aria-label="Search multiple values for a single search key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_2" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-single-item-by-key" class="md-nav__link">
+    Get single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Get single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_3" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-item" class="md-nav__link">
+    Create item
+  </a>
+  
+    <nav class="md-nav" aria-label="Create item">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_4" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-single-item-by-key" class="md-nav__link">
+    Update single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Update single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_5" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-single-item-by-key" class="md-nav__link">
+    Delete single item by key
+  </a>
+  
+    <nav class="md-nav" aria-label="Delete single item by key">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_6" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-all-audit-logs" class="md-nav__link">
+    List all audit logs
+  </a>
+  
+    <nav class="md-nav" aria-label="List all audit logs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_7" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#view-item-history" class="md-nav__link">
+    View item history
+  </a>
+  
+    <nav class="md-nav" aria-label="View item history">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#implementation-example_8" class="md-nav__link">
+    Implementation Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/GESkunkworks/scoutr/edit/master/docs/reference/endpoint-structure.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Endpoint structure</h1>
+                
+                <p>The helper methods within Scoutr assume that your API consists of the below endpoint types.</p>
+<h2 id="list-all-records">List all records</h2>
+<p>The list all items endpoint will return a list of all items within the backend that the user has permission to see
+and that meet any specified filter criteria.</p>
+<h3 id="serverless-example">Serverless Example</h3>
+<div class="highlight"><pre><span></span><code><span class="nt">list</span><span class="p">:</span>
+  <span class="nt">handler</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">endpoints.list.lambda_handler</span>
+  <span class="nt">events</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">http</span><span class="p">:</span>
+        <span class="nt">path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">items</span>
+        <span class="nt">method</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">get</span>
+        <span class="nt">private</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
+<h3 id="implementation-example">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="list-all-unique-values-for-a-key">List all unique values for a key</h2>
+<p>The list by unique key endpoint is provided as a means to display all unique values for a single search key. It is
+implemented by specifying a value for the <code>key</code> argument of the <code>list_unique_values()</code> method.</p>
+<h3 id="implementation-example_1">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list_unique_values</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">key</span><span class="o">=</span><span class="s1">&#39;product&#39;</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="search-multiple-values-for-a-single-search-key">Search multiple values for a single search key</h2>
+<p>The search endpoint enables users to lookup information about multiple items by utilizing a dynamic path variable
+(POST <code>/search/{search_key}</code>).</p>
+<p>For example, if you wanted to search for records that had specific <code>product</code> key, you could submit the below request:</p>
+<div class="highlight"><pre><span></span><code>POST /search/product
+</code></pre></div>
+<p>With the body:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+    <span class="s2">&quot;Standard&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Limited&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Deluxe&quot;</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>Would return the contents of records where <code>product</code> is one of "Standard", "Limited", or "Deluxe".</p>
+<h3 id="implementation-example_2">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get path parameters</span>
+    <span class="n">path_params</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;pathParameters&#39;</span><span class="p">]</span>
+    <span class="n">query</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])</span>
+    <span class="n">search_key</span> <span class="o">=</span> <span class="n">path_params</span><span class="p">[</span><span class="s1">&#39;search_key&#39;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">search</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">key</span><span class="o">=</span><span class="n">search_key</span><span class="p">,</span>
+            <span class="n">values</span><span class="o">=</span><span class="n">query</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="get-single-item-by-key">Get single item by key</h2>
+<p>If this returns more than one record, it will throw a <code>BadRequestException</code>. If no records are
+returned, a <code>NotFoundException</code> will be thrown.</p>
+<h3 id="implementation-example_3">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get item id</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;pathParameters&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">item_id</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="create-item">Create item</h2>
+<p>Refer to the <a href="../validation">data validation</a> section for more information on validation.</p>
+<h3 id="implementation-example_4">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+<span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">value_in_set</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+
+<span class="n">PRODUCTS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+
+<span class="n">VALIDATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;product&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">value_in_set</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">valid_options</span><span class="o">=</span><span class="n">PRODUCTS</span><span class="p">,</span>
+        <span class="n">option_name</span><span class="o">=</span><span class="s1">&#39;product&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d</span><span class="si">{4}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Date must be formatted as YYYY-MM-DD&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">item</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">item</span><span class="p">,</span>
+            <span class="n">validation</span><span class="o">=</span><span class="n">VALIDATION</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="update-single-item-by-key">Update single item by key</h2>
+<p>The <code>update()</code> method accepts a couple of arguments:</p>
+<p><strong><code>primary_key</code></strong>
+Mapping of the primary key to value. For instance, if the table's primary key is <code>id</code>, it is expected this mapping
+would be:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p><strong><code>data</code></strong>
+Dictionary of fields to be updated</p>
+<p><strong><code>validation</code></strong>
+Dictionary of fields to perform validation against. Refer to the <a href="../validation">data validation</a> section for more
+information.</p>
+<p><strong><code>condition</code></strong>
+Conditional expression to apply on updates. This should be an instance of boto3's
+<a href="https://www.programcreek.com/python/example/103724/boto3.dynamodb.conditions.Attr"><code>ConditionExpression</code></a>. If the
+condition expression does not pass, a <code>BadRequestException</code> will be thrown.</p>
+<p><strong><code>condition_failure_message</code></strong></p>
+<p>By default, if the condition expression does not pass, it will return an error to the user stating
+"Conditional check failed". However, if this parameter is supplied, it will be returned to the user instead.</p>
+<h3 id="implementation-example_5">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+<span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">value_in_set</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+
+<span class="n">PRODUCTS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+
+<span class="n">VALIDATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;product&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">value_in_set</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">valid_options</span><span class="o">=</span><span class="n">PRODUCTS</span><span class="p">,</span>
+        <span class="n">option_name</span><span class="o">=</span><span class="s1">&#39;product&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d</span><span class="si">{4}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Date must be formatted as YYYY-MM-DD&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">event</span><span class="p">[</span><span class="s1">&#39;body&#39;</span><span class="p">])</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span>
+            <span class="n">validation</span><span class="o">=</span><span class="n">VALIDATION</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="delete-single-item-by-key">Delete single item by key</h2>
+<p><strong><code>primary_key</code></strong>
+Mapping of the primary key to value. For instance, if the table's primary key is <code>id</code>, it is expected this mapping
+would be:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="s1">&#39;value&#39;</span><span class="p">}</span>
+</code></pre></div>
+<p><strong><code>condition</code></strong>
+Conditional expression to apply on deletions. This should be an instance of boto3's
+<a href="https://www.programcreek.com/python/example/103724/boto3.dynamodb.conditions.Attr"><code>ConditionExpression</code></a>. If the
+condition expression does not pass, a <code>BadRequestException</code> will be thrown.</p>
+<p><strong><code>condition_failure_message</code></strong></p>
+<p>By default, if the condition expression does not pass, it will return an error to the user stating
+"Conditional check failed". However, if this parameter is supplied, it will be returned to the user instead.</p>
+<h3 id="implementation-example_6">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+<span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">value_in_set</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+
+<span class="n">PRODUCTS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">}</span>
+
+<span class="n">VALIDATION</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;product&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">value_in_set</span><span class="p">(</span>
+        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
+        <span class="n">valid_options</span><span class="o">=</span><span class="n">PRODUCTS</span><span class="p">,</span>
+        <span class="n">option_name</span><span class="o">=</span><span class="s1">&#39;product&#39;</span>
+    <span class="p">),</span>
+    <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d</span><span class="si">{4}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
+        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Date must be formatted as YYYY-MM-DD&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get item id</span>
+    <span class="n">item_id</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;pathParameters&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">primary_key</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="n">item_id</span><span class="p">}</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="list-all-audit-logs">List all audit logs</h2>
+<p>This endpoint enables users to view and filter all of the audit logs. Note that field filter permissions do not apply to
+audit logs, but the <code>permitted_endpoint</code> permissions still do.</p>
+<h3 id="implementation-example_7">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Build request</span>
+    <span class="n">request</span> <span class="o">=</span> <span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
+
+    <span class="c1"># Validate item id</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">path_params</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;item&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">item</span><span class="p">:</span>
+        <span class="n">param_overrides</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;resource.id&#39;</span><span class="p">:</span> <span class="n">item</span><span class="p">}</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">param_overrides</span> <span class="o">=</span> <span class="p">{}</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">list_audit_logs</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">request</span><span class="p">,</span>
+            <span class="n">param_overrides</span><span class="o">=</span><span class="n">param_overrides</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+<h2 id="view-item-history">View item history</h2>
+<p>The history endpoint utilizes the audit logs to reconstruct snapshots of a record over time. A sample output is shown
+below:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;active_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-12-17&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Suspended&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-01-01T16:10:32.399907&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;active_date&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-12-17&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Active&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-12-01T19:04:42.054592&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;data&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;product&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;Created&quot;</span>
+        <span class="p">},</span>
+        <span class="nt">&quot;time&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-01-01T00:00:00.000769&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+<h3 id="implementation-example_8">Implementation Example</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="kn">from</span> <span class="nn">scoutr.exceptions</span> <span class="kn">import</span> <span class="n">HttpException</span>
+<span class="kn">from</span> <span class="nn">scoutr.helpers.api_gateway</span> <span class="kn">import</span> <span class="n">build_api_gateway_request</span><span class="p">,</span> <span class="n">handle_http_exception</span>
+<span class="kn">from</span> <span class="nn">scoutr.models.config</span> <span class="kn">import</span> <span class="n">Config</span>
+<span class="kn">from</span> <span class="nn">scoutr.providers.aws</span> <span class="kn">import</span> <span class="n">DynamoAPI</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">scoutr.utils</span> <span class="kn">import</span> <span class="n">mock_sentry</span>
+    <span class="n">sentry_sdk</span> <span class="o">=</span> <span class="n">mock_sentry</span>
+
+<span class="k">def</span> <span class="nf">lambda_handler</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">context</span><span class="p">):</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="n">Config</span><span class="p">(</span>
+        <span class="n">data_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;TableName&#39;</span><span class="p">),</span>
+        <span class="n">auth_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuthTable&#39;</span><span class="p">),</span>
+        <span class="n">group_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;GroupTable&#39;</span><span class="p">),</span>
+        <span class="n">audit_table</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;AuditTable&#39;</span><span class="p">),</span>
+        <span class="n">primary_key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Get parameters</span>
+    <span class="n">item</span> <span class="o">=</span> <span class="n">event</span><span class="p">[</span><span class="s1">&#39;pathParameters&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">api</span> <span class="o">=</span> <span class="n">DynamoAPI</span><span class="p">(</span><span class="n">config</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">api</span><span class="o">.</span><span class="n">history</span><span class="p">(</span>
+            <span class="n">request</span><span class="o">=</span><span class="n">build_api_gateway_request</span><span class="p">(</span><span class="n">event</span><span class="p">),</span>
+            <span class="n">key</span><span class="o">=</span><span class="s1">&#39;id&#39;</span><span class="p">,</span>
+            <span class="n">value</span><span class="o">=</span><span class="n">item</span>
+        <span class="p">)</span>
+    <span class="k">except</span> <span class="n">HttpException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">sentry_sdk</span><span class="o">.</span><span class="n">capture_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">handle_http_exception</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">{</span>
+            <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)})</span>
+        <span class="p">}</span>
+
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;statusCode&#39;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+        <span class="s1">&#39;body&#39;</span><span class="p">:</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="p">}</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../../getting-started/configuration/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Configuration
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../access-control/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Access control
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../..",
+          features: ['navigation.tabs'],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

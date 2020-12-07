@@ -11,19 +11,19 @@
       
         <meta name="author" content="GE Skunkworks">
       
-      <link rel="shortcut icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.4">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.1.7">
     
     
       
-        <title>Validation - Scoutr</title>
+        <title>Error tracking - Scoutr</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.358818c7.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.19753c6b.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.f0267088.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.196e0c26.min.css">
         
       
     
@@ -63,7 +63,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#syntax" class="md-skip">
+        <a href="#error-tracking" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href=".." title="Scoutr" class="md-header-nav__button md-logo" aria-label="Scoutr">
+    <a href="../.." title="Scoutr" class="md-header-nav__button md-logo" aria-label="Scoutr">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -93,7 +93,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Validation
+              Error tracking
             
           </span>
         </div>
@@ -108,7 +108,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -151,6 +151,72 @@
       
       
         
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../../getting-started/installation/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+        
+      
+      <a href="../endpoint-structure/" class="md-tabs__link md-tabs__link--active">
+        Reference
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+      
+      <a href="../../example/" class="md-tabs__link">
+        Example
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
       
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
@@ -163,7 +229,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Scoutr" class="md-nav__button md-logo" aria-label="Scoutr">
+    <a href="../.." title="Scoutr" class="md-nav__button md-logo" aria-label="Scoutr">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
@@ -192,10 +258,47 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" >
+    <label class="md-nav__link" for="nav-1">
+      Home
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Home" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon"></span>
+        Home
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href=".." class="md-nav__link">
-      Introduction
+    <a href="../.." class="md-nav__link">
+      About
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../providers/" class="md-nav__link">
+      Providers
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -204,46 +307,47 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    <label class="md-nav__link" for="nav-2">
+      Getting Started
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Getting Started
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../setup/" class="md-nav__link">
-      Setup
+    <a href="../../getting-started/installation/" class="md-nav__link">
+      Installation
     </a>
   </li>
 
-    
-      
-      
-      
+        
+          
+          
+          
 
 
   <li class="md-nav__item">
-    <a href="../endpoint-structure/" class="md-nav__link">
-      Endpoint structure
+    <a href="../../getting-started/configuration/" class="md-nav__link">
+      Configuration
     </a>
   </li>
 
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../access-control/" class="md-nav__link">
-      Access control
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../filtering/" class="md-nav__link">
-      Filtering
-    </a>
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -254,18 +358,100 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    <label class="md-nav__link" for="nav-3">
+      Reference
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Reference" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../endpoint-structure/" class="md-nav__link">
+      Endpoint structure
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../access-control/" class="md-nav__link">
+      Access control
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../authentication/" class="md-nav__link">
+      Authentication
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../filtering/" class="md-nav__link">
+      Filtering
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../validation/" class="md-nav__link">
+      Validation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Validation
+        Error tracking
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Validation
+      Error tracking
     </a>
     
       
@@ -280,15 +466,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#error-tracking" class="md-nav__link">
+    Error tracking
   </a>
   
 </li>
@@ -299,16 +478,9 @@
     
   </li>
 
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../errors-and-metrics/" class="md-nav__link">
-      Errors and metrics
-    </a>
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -317,10 +489,35 @@
       
 
 
+  <li class="md-nav__item md-nav__item--nested">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
+    <label class="md-nav__link" for="nav-4">
+      Example
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Example" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        Example
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
   <li class="md-nav__item">
-    <a href="../example/" class="md-nav__link">
+    <a href="../../example/" class="md-nav__link">
       Example
     </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -346,15 +543,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example" class="md-nav__link">
-    Example
+  <a href="#error-tracking" class="md-nav__link">
+    Error tracking
   </a>
   
 </li>
@@ -371,81 +561,31 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/GESkunkworks/scoutr/edit/master/docs/validation.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/GESkunkworks/scoutr/edit/master/docs/reference/error-tracking.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>Validation</h1>
+                  <h1>Error tracking</h1>
                 
-                <p>For convenience, support for data validation on all create and update calls is supported. In order to implement the
-validation, a dictionary should be passed to the <code>field_validation</code> argument of the <code>create()</code> or <code>update()</code> methods
-of <code>DynamoAPI</code>. The syntax of this dictionary is outlined below.</p>
-<p>On <code>create()</code> calls, all items specified in the <code>field_validation</code> dictionary are assumed to be required fields. If a
-field is missing from the user input, an error will be thrown saying that the field is required.</p>
-<h2 id="syntax">Syntax</h2>
-<div class="codehilite"><pre><span></span><code><span class="n">FIELD_VALIDATION</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;field_name_1&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">callable_that_returns_a_bool</span><span class="p">,</span>
-    <span class="s1">&#39;field_name_2&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">callable_that_returns_a_dict</span><span class="p">,</span>
-    <span class="s1">&#39;field_name_3&#39;</span><span class="p">:</span> <span class="n">callable_that_returns_a_bool</span><span class="p">,</span>
-    <span class="s1">&#39;field_name_4&#39;</span><span class="p">:</span> <span class="n">callable_that_returns_a_dict</span>
-<span class="p">}</span>
+                <h2 id="error-tracking">Error tracking</h2>
+<p>Support for <a href="https://sentry.io">Sentry</a> is built-in to Scoutr in Python. Error tracking will be added to Scoutr in Go
+at a later time. Breadcrumbs are automatically added in at key points in the execution. To enable error tracking,
+install the <code>sentry-sdk</code> package:</p>
+<div class="highlight"><pre><span></span><code>pip install sentry-sdk
 </code></pre></div>
+<p>And then initialize Sentry at the start of your code:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">sentry_sdk</span>
+<span class="kn">from</span> <span class="nn">sentry_sdk.integrations.aws_lambda</span> <span class="kn">import</span> <span class="n">AwsLambdaIntegration</span>
 
-<p>The key of each item in the dictionary should match a field name that you want to perform validation against. The
-corresponding value for the key should be a callable that either returns a bool or a dict formatted as:</p>
-<div class="codehilite"><pre><span></span><code><span class="p">{</span>
-    <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">boolean</span> <span class="n">that</span> <span class="n">indicates</span> <span class="n">whether</span> <span class="n">this</span> <span class="n">field</span> <span class="n">was</span> <span class="n">valid</span> <span class="ow">or</span> <span class="ow">not</span><span class="p">,</span>
-    <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;custom error message to return to the user&#39;</span>
-<span class="p">}</span>
+<span class="n">sentry_sdk</span><span class="o">.</span><span class="n">init</span><span class="p">(</span>
+    <span class="n">dsn</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;SENTRY_DSN&#39;</span><span class="p">),</span>
+    <span class="n">integrations</span><span class="o">=</span><span class="p">[</span><span class="n">AwsLambdaIntegration</span><span class="p">()],</span>
+    <span class="n">environment</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s1">&#39;ENV&#39;</span><span class="p">)</span>
+<span class="p">)</span>
 </code></pre></div>
-
-<p>The callable that you provide can either be a function or a lambda. The method signature of both options <strong>must accept</strong>
-three arguments:
-- <code>value</code> - Contains the input value for this field
-- <code>item</code> - Contains the entire data object that was passed from the user
-- <code>existing_item</code> - Contains the existing data object in Dynamo. This will only have a value on update calls. For
-    create calls, this will be <code>None</code>.</p>
-<h2 id="example">Example</h2>
-<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">validate_user</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">existing_item</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-        <span class="n">item_type</span> <span class="o">=</span> <span class="n">existing_item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">item_type</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">item_type</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
-            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Type field is required&#39;</span>
-        <span class="p">}</span>
-
-    <span class="k">if</span> <span class="n">item_type</span> <span class="o">==</span> <span class="s1">&#39;1&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\d</span><span class="si">{9}</span><span class="s1">$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
-            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Invalid user for type </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">item_type</span>
-        <span class="p">}</span>
-    <span class="k">elif</span> <span class="n">item_type</span> <span class="o">==</span> <span class="s1">&#39;2&#39;</span><span class="p">:</span>
-        <span class="k">return</span> <span class="p">{</span>
-            <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^.+@example.com$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
-            <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Invalid user for type </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">item_type</span>
-        <span class="p">}</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="kc">False</span>
-
-<span class="n">FIELD_VALIDATION</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;user&#39;</span><span class="p">:</span> <span class="n">validate_user</span><span class="p">,</span>
-    <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="n">DynamoAPI</span><span class="o">.</span><span class="n">value_in_list</span><span class="p">(</span>
-        <span class="n">value</span><span class="o">=</span><span class="n">value</span><span class="p">,</span>
-        <span class="n">valid_options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">],</span>
-        <span class="n">option_name</span><span class="o">=</span><span class="s1">&#39;type&#39;</span>
-    <span class="p">),</span>
-    <span class="s1">&#39;description&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="nb">str</span><span class="p">),</span>
-    <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">value</span><span class="p">,</span> <span class="n">item</span><span class="p">,</span> <span class="n">existing_item</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;result&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;^\w+ \w+$&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">),</span>
-        <span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Invalid name format&#39;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>Refer to the <a href="https://github.com/GESkunkworks/scoutr/tree/master/example">examples</a> to see sample usage of Sentry.</p>
                 
               
               
@@ -464,7 +604,7 @@ three arguments:
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../filtering/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../validation/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -473,19 +613,19 @@ three arguments:
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Filtering
+                Validation
               </div>
             </div>
           </a>
         
         
-          <a href="../errors-and-metrics/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../example/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Errors and metrics
+                Example
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
@@ -512,15 +652,15 @@ three arguments:
       
     </div>
     
-      <script src="../assets/javascripts/vendor.7e0ee788.min.js"></script>
-      <script src="../assets/javascripts/bundle.b3a72adc.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      <script src="../../assets/javascripts/vendor.0ac82a11.min.js"></script>
+      <script src="../../assets/javascripts/bundle.f81dfb4d.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
-          base: "..",
-          features: [],
+          base: "../..",
+          features: ['navigation.tabs'],
           search: Object.assign({
-            worker: "../assets/javascripts/worker/search.4ac00218.min.js"
+            worker: "../../assets/javascripts/worker/search.4ac00218.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
